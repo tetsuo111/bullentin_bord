@@ -17,7 +17,7 @@ $conn = mysqli_connect($db_host , $db_user , $db_pass );
 if($conn){
   //データベースの選択
   mysqli_select_db($conn  , $db_name);
-
+  mysqli_query($conn , 'SET NAMES utf8');
   //データベースへの問い合わせSQL文　3　user_nameを取り出してくる
   $sql = 'SELECT user_name FROM user_tb WHERE login_name = "'.$user.'" AND login_password = "'.$pass.'"';
 
